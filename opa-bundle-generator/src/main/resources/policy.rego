@@ -35,7 +35,7 @@ is_valid_payment {
 	payload := get_payload
     user := get_user_if_is_valid
     merchant := get_merchant_if_is_valid
-    check_payment_amounts(payload.amount, merchant)
+    check_payment_amount_range(payload.amount, merchant)
 
 }
 
@@ -58,7 +58,7 @@ check_user_score_and_registration_date_for_loan(user){
 
 }
 
-check_payment_amounts(amount, merchant) {
+check_payment_amount_range(amount, merchant) {
 	amount >= merchant.minAmount
     amount <= merchant.maxAmount
 }
