@@ -1,0 +1,4 @@
+rootProject.name = 'java-opa-example'
+include 'bank-ms'
+include 'opa-bundle-generator'
+

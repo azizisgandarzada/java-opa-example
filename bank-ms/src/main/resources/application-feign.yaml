@@ -1,0 +1,18 @@
+feign:
+  client:
+    config:
+      opaClient:
+        url: http://localhost:8181/v1/data/
+        connectTimeout: 200000
+        readTimeout: 190000
+        loggerLevel: FULL
+        decode404: false
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+    response:
+      enabled: true
+  httpclient:
+    connection-timeout: 30000
+    connection-timer-repeat: 3000

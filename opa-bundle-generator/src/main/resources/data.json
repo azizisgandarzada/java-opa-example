@@ -1,0 +1,33 @@
+{
+  "users": {
+    "aziz": {
+      "score": 2,
+      "registeredAt": "2020-05-23T22:16:00Z",
+      "country": "Azerbaijan"
+    },
+    "elbrus": {
+      "score": 10,
+      "registeredAt": "2018-01-26T11:04:00Z",
+      "country": "Azerbaijan"
+    },
+    "parviz": {
+      "score": 5,
+      "registeredAt": "2019-11-02T10:14:00Z",
+      "country": "Azerbaijan"
+    }
+  },
+  "merchants": {
+    "bakcell": {
+      "minAmount": 1,
+      "maxAmount": 500
+    },
+    "azercell": {
+      "minAmount": 0.1,
+      "maxAmount": 1000
+    },
+    "nar": {
+      "minAmount": 0.2,
+      "maxAmount": 100
+    }
+  }
+}

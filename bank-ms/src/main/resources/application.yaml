@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: bank-ms
+  profiles:
+    active:
+      - feign
+      - logging
+      - server

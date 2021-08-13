@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: opa-bundle-generator
+  profiles:
+    active:
+      - server
