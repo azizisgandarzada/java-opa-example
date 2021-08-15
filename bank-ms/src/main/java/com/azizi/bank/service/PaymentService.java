@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentService {
 
-    @PreAuthorize("@opaClientImpl.allowPayment(#paymentDto)")
+    @PreAuthorize("@opaClientImpl.allow(new com.azizi.bank.dto.client.InputDto('PAYMENT',#paymentDto))")
     public String pay(PaymentDto paymentDto) {
         return "paid";
     }

@@ -20,50 +20,17 @@ public class OpaClientImpl {
 
     private final OpaClient opaClient;
 
-    public boolean allowPayment(PaymentDto paymentDto) {
+    public boolean allow(InputDto inputDto) {
         if (!isAuthenticated()) {
             return false;
         }
-        InputDto input = InputDto.builder()
-                .operation(Operation.PAYMENT)
-                .payload(paymentDto)
-                .build();
         OpaDto opaDto = OpaDto.builder()
-                .input(input)
+                .input(inputDto)
                 .build();
         OpaResponse response = opaClient.allowPayment(opaDto);
         return checkResult(response);
     }
 
-    public boolean allowTransfer(TransferDto transferDto) {
-        if (!isAuthenticated()) {
-            return false;
-        }
-        InputDto input = InputDto.builder()
-                .operation(Operation.TRANSFER)
-                .payload(transferDto)
-                .build();
-        OpaDto opaDto = OpaDto.builder()
-                .input(input)
-                .build();
-        OpaResponse response = opaClient.allowTransfer(opaDto);
-        return checkResult(response);
-    }
-
-    public boolean allowLoanOrder(LoanDto loanDto) {
-        if (!isAuthenticated()) {
-            return false;
-        }
-        InputDto input = InputDto.builder()
-                .operation(Operation.LOAN_ORDER)
-                .payload(loanDto)
-                .build();
-        OpaDto opaDto = OpaDto.builder()
-                .input(input)
-                .build();
-        OpaResponse response = opaClient.allowLoanOrder(opaDto);
-        return checkResult(response);
-    }
 
     private boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

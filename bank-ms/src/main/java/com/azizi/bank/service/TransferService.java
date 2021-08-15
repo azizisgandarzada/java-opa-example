@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TransferService {
 
-    @PreAuthorize("@opaClientImpl.allowTransfer(#transferDto)")
+    @PreAuthorize("@opaClientImpl.allow(new com.azizi.bank.dto.client.InputDto('TRANSFER',#transferDto))")
     public String transfer(TransferDto transferDto) {
         return "transferred";
     }

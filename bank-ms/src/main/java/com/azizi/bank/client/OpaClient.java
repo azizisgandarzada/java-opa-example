@@ -9,13 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "opaClient", url = "${feign.client.config.opaClient.url}")
 public interface OpaClient {
 
-    @PostMapping("authz/allow_payment")
+    @PostMapping("authz/allow")
     OpaResponse allowPayment(@RequestBody OpaDto opaDto);
-
-    @PostMapping("authz/allow_transfer")
-    OpaResponse allowTransfer(@RequestBody OpaDto opaDto);
-
-    @PostMapping("authz/allow_loan_order")
-    OpaResponse allowLoanOrder(@RequestBody OpaDto opaDto);
 
 }

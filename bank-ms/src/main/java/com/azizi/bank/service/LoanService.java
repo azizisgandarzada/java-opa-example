@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoanService {
 
-    @PreAuthorize("@opaClientImpl.allowLoanOrder(#loanDto)")
+    @PreAuthorize("@opaClientImpl.allow(new com.azizi.bank.dto.client.InputDto('LOAN_ORDER',#loanDto))")
     public String order(LoanDto loanDto) {
         return "ordered";
     }
