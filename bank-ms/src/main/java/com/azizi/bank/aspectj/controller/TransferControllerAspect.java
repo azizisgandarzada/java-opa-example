@@ -31,7 +31,7 @@ public class TransferControllerAspect {
         OpaDto opaDto = OpaDto.builder()
                 .input(input)
                 .build();
-        OpaResponse result = opaClient.allowTransfer(opaDto);
+        OpaResponse result = opaClient.allow(opaDto);
         if (!result.isResult()) {
             throw new AccessDeniedException();
         }
